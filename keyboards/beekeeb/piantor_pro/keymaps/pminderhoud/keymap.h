@@ -7,6 +7,7 @@ enum layers {
     BASE_NOMOD,
     SEMIMAK,
     SEMIMAK_NOMOD,
+    DUSK_OPT,
     QWERTY,
     QWERTY_NOMOD,
     DIACRIT,
@@ -151,7 +152,9 @@ enum unicode_names {
 
 // LAYER KEYS
 #define L_SP_NAV LT(NAV,KC_SPC)
+#define L_R_NAV LT(NAV,KC_R)
 #define L_BS_SYM LT(SYM,KC_BACKSPACE)
+#define L_SP_SYM LT(SYM,KC_SPC)
 #define L_EN_SYM LT(SYM,KC_ENT)
 #define L_EN_FNC LT(FUNC,KC_ENT)
 #define L_RA_DIA LT(DIACRIT,KC_RALT)

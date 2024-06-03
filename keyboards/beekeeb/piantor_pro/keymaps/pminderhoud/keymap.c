@@ -114,6 +114,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
 
   ),
+      [DUSK_OPT] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    KC_ESCAPE,    KC_Z,    KC_P,    KC_D,    KC_W,    KC_Q,                      KC_UNDS,    KC_J,    KC_U,    KC_O,  KC_DOT, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+     KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_Y,                         KC_M,  HOME_H,  HOME_E,  HOME_A,  HOME_I,KC_SLASH,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                         KC_X,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        KC_BACKSPACE,L_R_NAV,L_TB_DIA,   L_EN_SYM,L_SP_SYM,L_DL_FNC
+                                      //`--------------------------'  `--------------------------'
+
+  ),
 
       [DIACRIT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -192,13 +204,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, DF(QWERTY), DF(BASE), DF(SEMIMAK),  DF(SEMIMAK_NOMOD), TG(BASE_NOMOD), TG(QWERTY_NOMOD), XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DF(QWERTY), DF(DUSK_OPT), DF(BASE), DF(SEMIMAK),  DF(SEMIMAK_NOMOD), TG(BASE_NOMOD), TG(QWERTY_NOMOD), XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
                                       //`--------------------------'  `--------------------------'
-  )
+  ),
 };
 // clang-format on
 
