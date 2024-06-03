@@ -99,6 +99,10 @@ enum unicode_names {
 #define SHOME_T LSFT_T(KC_T)
 #define SHOME_D RSFT_T(KC_D)
 
+// Dusk opt
+#define HOMED_E LALT_T(KC_E)
+#define HOMED_A RCTL_T(KC_A)
+
 // Home row mods for QWERTY layer.
 #define QHOME_A LGUI_T(KC_A)
 #define QHOME_S LALT_T(KC_S)
