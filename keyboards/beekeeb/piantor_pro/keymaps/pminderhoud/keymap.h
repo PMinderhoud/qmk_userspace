@@ -29,7 +29,9 @@ enum custom_keycodes {
     PK_DZERO,
     PK_TZERO,
     PK_SMHAP,
-    PK_SMSAD
+    PK_SMSAD,
+    PK_LAMBDA,
+    PK_LAMBDABLK
 };
 
 enum unicode_names {

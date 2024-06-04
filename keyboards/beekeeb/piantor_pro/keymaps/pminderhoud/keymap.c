@@ -231,7 +231,9 @@ enum combos {
   DBLZERO,
   TRPLZERO,
   SLASH,
-  BACKSLASH
+  BACKSLASH,
+  LAMBDA,
+  LAMBDABLK
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -251,6 +253,8 @@ const uint16_t PROGMEM doublezero_combo[] = {KC_3, KC_0, COMBO_END};
 const uint16_t PROGMEM triplezero_combo[] = {KC_2, KC_3, KC_0, COMBO_END};
 const uint16_t PROGMEM slash_combo[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
+const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
+const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -269,7 +273,9 @@ combo_t key_combos[] = {
   [DBLZERO] = COMBO(doublezero_combo, PK_DZERO),
   [TRPLZERO] = COMBO(triplezero_combo, PK_TZERO),
   [SLASH] = COMBO(slash_combo, KC_SLASH),
-  [BACKSLASH] = COMBO(backslash_combo, KC_BACKSLASH)
+  [BACKSLASH] = COMBO(backslash_combo, KC_BACKSLASH),
+  [LAMBDA] = COMBO(lambda_combo,PK_LAMBDA),
+  [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -306,6 +312,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     case PK_ZEROX:
         if (record->event.pressed) {
             SEND_STRING("0x");
+        }
+        break;
+    case PK_LAMBDA:
+        if (record->event.pressed) {
+            SEND_STRING(" => ");
+        }
+        break;
+    case PK_LAMBDABLK:
+        if (record->event.pressed) {
+            SEND_STRING(" => {\n");
         }
         break;
     case CAPSWORD:
