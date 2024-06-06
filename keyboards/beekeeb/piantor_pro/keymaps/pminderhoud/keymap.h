@@ -15,6 +15,7 @@ enum layers {
     NAV,
     FUNC,
     ADJUST,
+    VSTUDIO
 };
 
 enum custom_keycodes {
@@ -167,8 +168,17 @@ enum unicode_names {
 #define L_TB_FNC LT(FUNC,KC_TAB)
 #define L_DL_FNC LT(FUNC,KC_DEL)
 #define L_TB_DIA LT(DIACRIT,KC_TAB)
+#define L_ES_VST LT(VSTUDIO,KC_ESC)
+#define L_BS_VST LT(VSTUDIO,KC_BACKSPACE)
 
 #define SK_NWDSK G(C(KC_D))     // New desktop
 #define SK_CLDSK G(C(KC_F4))     // Close desktop
 #define SK_PRDSK G(C(KC_LEFT))     // Previous desktop
 #define SK_NXDSK G(C(KC_RIGHT))     // Next desktop
+
+#define VS_DEBUG  KC_F5
+#define VS_STPDBG S(KC_F)
+#define VS_STOVER KC_F10
+#define VS_STINTO KC_F11
+#define VS_STOUT  S(KC_F11)
+#define VS_BRKPT  KC_F9
