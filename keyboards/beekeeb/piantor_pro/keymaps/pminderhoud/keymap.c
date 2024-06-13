@@ -68,7 +68,7 @@ const uint32_t unicode_map[] PROGMEM = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, TM_MUTE
+      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_B,                       KC_DOT,  HOME_H,  HOME_E,  HOME_A,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
