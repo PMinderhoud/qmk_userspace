@@ -68,7 +68,7 @@ const uint32_t unicode_map[] PROGMEM = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, XXXXXXX,
+      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, TM_MUTE
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_B,                       KC_DOT,  HOME_H,  HOME_E,  HOME_A,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
     [SEMIMAK] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_L,    KC_H,    KC_V,    KC_X,                      KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y, XXXXXXX,
+      XXXXXXX,    KC_F,    KC_L,    KC_H,    KC_V,    KC_X,                      KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S, SHOME_R, SHOME_N, SHOME_T,    KC_K,                         KC_C, SHOME_D,  HOME_E,  HOME_A,  HOME_I, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -116,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
       [DUSK_OPT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_Z,    KC_P,    KC_D,    KC_W,    KC_Q,                      KC_UNDS,    KC_J,    KC_O,    KC_U,  KC_DOT, XXXXXXX,
+    KC_ESCAPE,    KC_Z,    KC_P,    KC_D,    KC_W,    KC_Q,                      KC_UNDS,    KC_J,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_Y,                         KC_M,  HOME_H, HOMED_A, HOMED_E,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|

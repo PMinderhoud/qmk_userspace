@@ -182,3 +182,5 @@ enum unicode_names {
 #define VS_STINTO KC_F11
 #define VS_STOUT  S(KC_F11)
 #define VS_BRKPT  KC_F9
+
+#define TM_MUTE C(S(KC_M))
