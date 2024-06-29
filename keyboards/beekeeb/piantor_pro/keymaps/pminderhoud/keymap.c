@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_B,                       KC_DOT,  HOME_H,  HOME_E,  HOME_A,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  MO(VSTUDIO),    KC_Z,    KC_X,    KC_K,    KC_G,    KC_W,                         KC_J,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
+    OSM(LKC_LSFT),KC_Z,    KC_X,    KC_K,    KC_G,    KC_W,                         KC_J,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
@@ -96,7 +96,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S, SHOME_R, SHOME_N, SHOME_T,    KC_K,                         KC_C, SHOME_D,  HOME_E,  HOME_A,  HOME_I, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  MO(VSTUDIO),    KC_Z,    KC_J,    KC_B,    KC_M,    KC_Q,                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
+  OSM(LKC_LSFT),    KC_Z,    KC_J,    KC_B,    KC_M,    KC_Q,                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_Y,                         KC_M,  HOME_H, HOMED_A, HOMED_E,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  MO(VSTUDIO),    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                         KC_X,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
+OSM(LKC_LSFT),    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                         KC_X,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          L_BS_VST,L_R_NAV,L_TB_DIA,   L_EN_SYM,L_SP_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
@@ -245,7 +245,9 @@ enum combos {
   SLASH,
   BACKSLASH,
   LAMBDA,
-  LAMBDABLK
+  LAMBDABLK,
+  CAPSWORDC,
+  CAPSWORDCS
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -267,6 +269,8 @@ const uint16_t PROGMEM slash_combo[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
 const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
 const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
+const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
+const uint16_t PROGMEM capswdsm_combo[] = {SHOME_T,SHOME_D, COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -288,6 +292,8 @@ combo_t key_combos[] = {
   [BACKSLASH] = COMBO(backslash_combo, KC_BACKSLASH),
   [LAMBDA] = COMBO(lambda_combo,PK_LAMBDA),
   [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
+  [CAPSWORDC] = COMBO(capswd_combo,CAPSWORD),
+  [CAPSWORDCS] = COMBO(capswdsm_combo,CAPSWORD),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
