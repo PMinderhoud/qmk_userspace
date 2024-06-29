@@ -182,5 +182,24 @@ enum unicode_names {
 #define VS_STINTO KC_F11
 #define VS_STOUT  S(KC_F11)
 #define VS_BRKPT  KC_F9
+#define VS_FORMAT S(A(KC_F))
+#define VS_SEARCH S(C(KC_F))
+
+#define VS_GODEF KC_F12
+#define VS_PKDEF A(KC_F12)
+#define VS_GOFILE C(KC_P)
+#define VS_COMMND C(S(KC_P))
+#define VS_GOIMPL C(KC_F12)
+#define VS_GOREF S(KC_F12)
+#define VS_NXERRF A(KC_F8)
+#define VS_NXERRS KC_F8
+#define VS_PRERRF S(A(KC_F8))
+#define VS_PRERRS S(KC_F8)
+#define VS_GOLINE C(KC_G)
+
+#define VS_GOALL  C(KC_T)
+#define VS_QACT  C(KC_DOT)
+#define VS_ISENSE  C(KC_SPACE)
+
 
 #define TM_MUTE C(S(KC_M))

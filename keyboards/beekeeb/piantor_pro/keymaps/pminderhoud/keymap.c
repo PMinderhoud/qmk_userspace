@@ -213,15 +213,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
 
   [VSTUDIO] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK, XXXXXXX, XXXXXXX, VS_BRKPT, VS_DEBUG, VS_STPDBG,                  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, VS_STINTO, VS_STOVER,VS_STOUT,                  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
+  //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
+         LLOCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       XXXXXXX,VS_SEARCH,VS_NXERRS,VS_STINTO,VS_STOVER, VS_STOUT,                        VS_GOALL,VS_COMMND,VS_GOIMPL,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                         XXXXXXX,VS_GOLINE, VS_GOREF,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+  //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
+                                               XXXXXXX,  XXXXXXX,  XXXXXXX,     VS_QACT,VS_ISENSE,  XXXXXXX
+                                          //`-----------------------------'  `-----------------------------'
   ),
 };
 // clang-format on
