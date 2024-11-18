@@ -7,7 +7,7 @@ enum layers {
     BASE_NOMOD,
     SEMIMAK,
     SEMIMAK_NOMOD,
-    DUSK_OPT,
+    NIGHT,
     QWERTY,
     QWERTY_NOMOD,
     DIACRIT,
@@ -93,7 +93,7 @@ enum unicode_names {
 #define HOME_C LSFT_T(KC_C)
 #define HOME_H RSFT_T(KC_H)
 #define HOME_E RCTL_T(KC_E)
-#define HOME_A LALT_T(KC_A)
+#define HOME_A RALT_T(KC_A)
 #define HOME_I RGUI_T(KC_I)
 
 // Semimak JQ
@@ -102,9 +102,14 @@ enum unicode_names {
 #define SHOME_T LSFT_T(KC_T)
 #define SHOME_D RSFT_T(KC_D)
 
-// Dusk opt
-#define HOMED_E LALT_T(KC_E)
-#define HOMED_A RCTL_T(KC_A)
+// Night
+#define HOMEN_N LGUI_T(KC_N)
+#define HOMEN_S LALT_T(KC_S)
+#define HOMEN_H LCTL_T(KC_H)
+#define HOMEN_T LSFT_T(KC_T)
+#define HOMEN_C RSFT_T(KC_C)
+#define HOMEN_E RALT_T(KC_E)
+#define HOMEN_A RCTL_T(KC_A)
 
 // Home row mods for QWERTY layer.
 #define QHOME_A LGUI_T(KC_A)
@@ -160,6 +165,7 @@ enum unicode_names {
 // LAYER KEYS
 #define L_SP_NAV LT(NAV,KC_SPC)
 #define L_R_NAV LT(NAV,KC_R)
+#define L_R_SYM LT(SYM,KC_R)
 #define L_BS_SYM LT(SYM,KC_BACKSPACE)
 #define L_SP_SYM LT(SYM,KC_SPC)
 #define L_EN_SYM LT(SYM,KC_ENT)
@@ -200,6 +206,8 @@ enum unicode_names {
 #define VS_GOALL  C(KC_T)
 #define VS_QACT  C(KC_DOT)
 #define VS_ISENSE  C(KC_SPACE)
+#define VS_SHOWPARAM C(S(KC_SPACE))
+#define VS_COPILOT A(KC_SLASH)
 
 
 #define TM_MUTE C(S(KC_M))

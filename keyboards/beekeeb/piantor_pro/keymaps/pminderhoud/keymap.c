@@ -114,15 +114,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
 
   ),
-      [DUSK_OPT] = LAYOUT_split_3x6_3(
+      [NIGHT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_Z,    KC_P,    KC_D,    KC_W,    KC_Q,                      KC_UNDS,    KC_J,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
+    KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_M,    KC_Q,                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_Y,                         KC_M,  HOME_H, HOMED_A, HOMED_E,  HOME_I,KC_SLASH,
+     KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_K,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-OSM(MOD_LSFT),    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                         KC_X,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
+OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     KC_SLASH,    KC_W, KC_QUOT, KC_SCLN,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         L_BS_VST,L_R_NAV,L_TB_DIA,   L_EN_SYM,L_SP_SYM,L_DL_FNC
+                                    OSM(MOD_LSFT),L_SP_NAV,L_TB_DIA,   L_BS_VST,L_R_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -204,7 +204,7 @@ OSM(MOD_LSFT),    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DF(QWERTY), DF(DUSK_OPT), DF(BASE), DF(SEMIMAK),  DF(SEMIMAK_NOMOD), TG(BASE_NOMOD), TG(QWERTY_NOMOD), XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, DF(QWERTY), DF(NIGHT), DF(BASE), DF(SEMIMAK),  DF(SEMIMAK_NOMOD), TG(BASE_NOMOD), TG(QWERTY_NOMOD), XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -216,11 +216,11 @@ OSM(MOD_LSFT),    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                     
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
          LLOCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
-       XXXXXXX,VS_SEARCH,VS_NXERRS,VS_STINTO,VS_STOVER, VS_STOUT,                        VS_GOALL,VS_COMMND,VS_GOIMPL,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+       XXXXXXX,VS_SEARCH,VS_NXERRS,VS_STINTO,VS_STOVER, VS_STOUT,                        VS_GOALL,VS_COMMND,VS_GOIMPL,VS_SHOWPARAM,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
        XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                         XXXXXXX,VS_GOLINE, VS_GOREF,  XXXXXXX,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
-                                               XXXXXXX,  XXXXXXX,  XXXXXXX,     VS_QACT,VS_ISENSE,  XXXXXXX
+                                               VS_QACT,VS_ISENSE,VS_COPILOT,     VS_QACT,VS_ISENSE,VS_COPILOT
                                           //`-----------------------------'  `-----------------------------'
   ),
 };
