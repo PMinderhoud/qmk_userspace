@@ -388,6 +388,8 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
         case L_EN_FNC:
         case L_ES_VST:
         case L_BS_VST:
+        case L_R_SYM:
+        case L_BS_VST:
             return 0;
     }
     return 800;
