@@ -116,11 +116,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
       [NIGHT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_M,    KC_Q,                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
+    KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_K,    KC_Q,                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_K,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
+     KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_M,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     KC_SLASH,    KC_W, KC_QUOT, KC_SCLN,KC_COMMA, KC_BSLS,
+OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                      KC_QUOT,    KC_W, KC_SCLN,KC_SLASH,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                     OSM(MOD_LSFT),L_SP_NAV,L_TB_DIA,   L_BS_VST,L_R_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
