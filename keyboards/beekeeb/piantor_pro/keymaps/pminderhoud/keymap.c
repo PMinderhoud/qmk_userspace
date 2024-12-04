@@ -68,13 +68,13 @@ const uint32_t unicode_map[] PROGMEM = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, XXXXXXX,
+      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_B,                       KC_DOT,  HOME_H,  HOME_E,  HOME_A,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_Z,    KC_X,    KC_K,    KC_G,    KC_W,                         KC_J,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
+    OSM(MOD_LSFT),KC_Z,    KC_X,    KC_K,    KC_G,    KC_W,                         KC_J,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_ESCAPE,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
+                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -92,13 +92,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
     [SEMIMAK] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_L,    KC_H,    KC_V,    KC_X,                      KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y, XXXXXXX,
+      XXXXXXX,    KC_F,    KC_L,    KC_H,    KC_V,    KC_X,                      KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S, SHOME_R, SHOME_N, SHOME_T,    KC_K,                         KC_C, SHOME_D,  HOME_E,  HOME_A,  HOME_I, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_Z,    KC_J,    KC_B,    KC_M,    KC_Q,                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
+  OSM(MOD_LSFT),    KC_Z,    KC_J,    KC_B,    KC_M,    KC_Q,                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_ESCAPE,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
+                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -114,15 +114,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
 
   ),
-      [DUSK_OPT] = LAYOUT_split_3x6_3(
+      [NIGHT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_Z,    KC_P,    KC_D,    KC_W,    KC_Q,                      KC_UNDS,    KC_J,    KC_O,    KC_U,  KC_DOT, XXXXXXX,
+    KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_K,    KC_Q,                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_Y,                         KC_M,  HOME_H, HOMED_A, HOMED_E,  HOME_I,KC_SLASH,
+     KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_M,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,    KC_F,    KC_B,    KC_K,    KC_G,    KC_V,                         KC_X,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
+OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                      KC_QUOT,    KC_W, KC_SCLN,KC_SLASH,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_BACKSPACE,L_R_NAV,L_TB_DIA,   L_EN_SYM,L_SP_SYM,L_DL_FNC
+                                    OSM(MOD_LSFT),L_R_NAV,L_TB_DIA,   L_BS_VST,L_SP_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -178,11 +178,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [NAV] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,---------------------------------------------------------------.
-        LLOCK,SK_PRDSK,SK_NWDSK,SK_CLDSK,SK_NXDSK, SELWORD,                    G(KC_TAB),C(KC_LEFT), S(KC_F10),   XXXXXXX,C(KC_RGHT),  SK_CLDSK,
+        LLOCK,SK_PRDSK,SK_NWDSK,SK_CLDSK,SK_NXDSK, SELWORD,                    G(KC_TAB),C(KC_LEFT), S(KC_F10),    KC_F11,C(KC_RGHT),  KC_F12,        // Goto definition, combine with ctrl to go to implementations, also works as fullscreen
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
-      KC_PSCR, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, C(KC_A),                      KC_PSCR,   KC_LEFT,   KC_DOWN,     KC_UP,   KC_RGHT,  SK_NWDSK,
+      KC_PSCR, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, C(KC_A),                      KC_PSCR,   KC_LEFT,   KC_DOWN,     KC_UP,   KC_RGHT,  KC_F8,         // nav to next error in errorlist (and other toolwindows in VS)
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
-      C(KC_Y), C(KC_Z), C(KC_X), C(KC_C), C(KC_V), G(KC_V),                      KC_WSCH,   KC_HOME,   KC_PGDN,   KC_PGUP,    KC_END,  SK_NXDSK,
+      C(KC_Y), C(KC_Z), C(KC_X), C(KC_C), C(KC_V), G(KC_V),                      KC_WSCH,   KC_HOME,   KC_PGDN,   KC_PGUP,    KC_END,S(C(KC_BSLS)),   // nav to start/end of selected bracket
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+----------+----------+----------+----------+----------|
                                           _______, _______, _______,    KC_WBAK, KC_WFWD,  KC_TAB
                                       //`--------------------------'  `--------------------------'
@@ -196,20 +196,32 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DM_PLY2,                      DM_REC2,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______
+                                       MO(ADJUST), _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
     [ADJUST] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, DF(QWERTY), DF(DUSK_OPT), DF(BASE), DF(SEMIMAK),  DF(SEMIMAK_NOMOD), TG(BASE_NOMOD), TG(QWERTY_NOMOD), XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX
-                                      //`--------------------------'  `--------------------------'
+  //,-----------------------------------------------------.                         ,-----------------------------------------------------.
+      QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
+      XXXXXXX,DF(QWERTY_NOMOD), XXXXXXX, DF(SEMIMAK_NOMOD), DF(BASE_NOMOD), XXXXXXX, XXXXXXX, DF(BASE),DF(SEMIMAK), TG(NIGHT), TG(QWERTY), XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,                  XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'                `--------------------------'
+  ),
+
+  [VSTUDIO] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
+         LLOCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       XXXXXXX,VS_SEARCH,VS_NXERRS,VS_STINTO,VS_STOVER, VS_STOUT,                        VS_GOALL,VS_COMMND,VS_GOIMPL,VS_SHOWPARAM,  XXXXXXX,  XXXXXXX,
+  //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
+       XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,  XXXXXXX,                         XXXXXXX,VS_GOLINE, VS_GOREF,  XXXXXXX,  XXXXXXX,  XXXXXXX,
+  //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
+                                               VS_QACT,VS_ISENSE,VS_COPILOT,     VS_QACT,VS_ISENSE,VS_COPILOT
+                                          //`-----------------------------'  `-----------------------------'
   ),
 };
 // clang-format on
@@ -233,7 +245,9 @@ enum combos {
   SLASH,
   BACKSLASH,
   LAMBDA,
-  LAMBDABLK
+  LAMBDABLK,
+  CAPSWORDC,
+  CAPSWORDCS
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -255,6 +269,8 @@ const uint16_t PROGMEM slash_combo[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
 const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
 const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
+const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
+const uint16_t PROGMEM capswdsm_combo[] = {SHOME_T,SHOME_D, COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -276,6 +292,8 @@ combo_t key_combos[] = {
   [BACKSLASH] = COMBO(backslash_combo, KC_BACKSLASH),
   [LAMBDA] = COMBO(lambda_combo,PK_LAMBDA),
   [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
+  [CAPSWORDC] = COMBO(capswd_combo,CAPSWORD),
+  [CAPSWORDCS] = COMBO(capswdsm_combo,CAPSWORD),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -368,6 +386,9 @@ uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
         case L_DL_FNC:
         case L_TB_DIA:
         case L_EN_FNC:
+        case L_ES_VST:
+        case L_BS_VST:
+        case L_R_SYM:
             return 0;
     }
     return 800;
