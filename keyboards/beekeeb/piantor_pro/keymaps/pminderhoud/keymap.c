@@ -204,7 +204,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                         ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,DF(QWERTY_NOMOD), XXXXXXX, DF(SEMIMAK_NOMOD), DF(BASE_NOMOD), XXXXXXX, XXXXXXX, DF(BASE),DF(SEMIMAK), TG(NIGHT), TG(QWERTY), XXXXXXX,
+      XXXXXXX,DF(QWERTY_NOMOD), XXXXXXX, DF(SEMIMAK_NOMOD), DF(BASE_NOMOD), XXXXXXX, XXXXXXX, DF(BASE),DF(SEMIMAK), DF(NIGHT), DF(QWERTY), XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
