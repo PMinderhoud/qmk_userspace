@@ -185,7 +185,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
       C(KC_Y), C(KC_Z), C(KC_X), C(KC_C), C(KC_V), G(KC_V),                      KC_WSCH,   KC_HOME,   KC_PGDN,   KC_PGUP,    KC_END,S(C(KC_BSLS)),   // nav to start/end of selected bracket
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+----------+----------+----------+----------+----------|
-                                          _______, _______, _______,    KC_WBAK, KC_WFWD,  KC_TAB
+                                          _______, _______, _______,    KC_ENTER, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -410,7 +410,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 }
 
 // Tap dance function
-void dance_q_finished(qk_tap_dance_state_t *state, void *user_data) {
+void dance_q_finished(tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         // Check if shift is held
         if (get_mods() & MOD_MASK_SHIFT) {
@@ -437,6 +437,6 @@ void dance_q_finished(qk_tap_dance_state_t *state, void *user_data) {
 }
 
 // Tap dance action
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
     [TD_Q] = ACTION_TAP_DANCE_FN(dance_q_finished),
 };
