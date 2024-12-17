@@ -409,11 +409,6 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
 
-// Define the tap dance states
-enum {
-    TD_Q = 0,
-};
-
 // Tap dance function
 void dance_q_finished(qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
