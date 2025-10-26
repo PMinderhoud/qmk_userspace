@@ -5,6 +5,7 @@
 #include "keymap_us.h"
 #include "quantum_keycodes.h"
 #include "keymap.h"
+#include "quantum.h"
 #include QMK_KEYBOARD_H
 #include "features/select_word.h"
 #include "features/achordion.h"
@@ -68,13 +69,13 @@ const uint32_t unicode_map[] PROGMEM = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                         KC_Q,    KC_M,    KC_U,    KC_O,    KC_Y, TM_MUTE,
+      XXXXXXX,    KC_F,    KC_R,    KC_D,    KC_P,    KC_V,                     TD(TD_Q),    KC_M,    KC_U,    KC_O,    KC_Y, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S,  HOME_N,  HOME_T,  HOME_C,    KC_B,                       KC_DOT,  HOME_H,  HOME_E,  HOME_A,  HOME_I,KC_SLASH,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
     OSM(MOD_LSFT),KC_Z,    KC_X,    KC_K,    KC_G,    KC_W,                         KC_J,    KC_L, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
+                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_VST,L_BS_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -96,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE,  HOME_S, SHOME_R, SHOME_N, SHOME_T,    KC_K,                         KC_C, SHOME_D,  HOME_E,  HOME_A,  HOME_I, KC_SCLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  OSM(MOD_LSFT),    KC_Z,    KC_J,    KC_B,    KC_M,    KC_Q,                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
+  OSM(MOD_LSFT),    KC_Z,    KC_J,    KC_B,    KC_M,TD(TD_Q),                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
@@ -116,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
       [NIGHT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_K,    KC_Q,                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
+    KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_K,TD(TD_Q),                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_M,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -184,7 +185,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
       C(KC_Y), C(KC_Z), C(KC_X), C(KC_C), C(KC_V), G(KC_V),                      KC_WSCH,   KC_HOME,   KC_PGDN,   KC_PGUP,    KC_END,S(C(KC_BSLS)),   // nav to start/end of selected bracket
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+----------+----------+----------+----------+----------|
-                                          _______, _______, _______,    KC_WBAK, KC_WFWD,  KC_TAB
+                                          _______, _______, _______,    KC_ENTER, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -407,3 +408,35 @@ bool achordion_chord(uint16_t tap_hold_keycode,
   // Otherwise, follow the opposite hands rule.
   return achordion_opposite_hands(tap_hold_record, other_record);
 }
+
+// Tap dance function
+void dance_q_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        // Check if shift is held
+        if (get_mods() & MOD_MASK_SHIFT) {
+            // Send "Qu" when shift is held
+            SEND_STRING("Qu");
+        } else {
+            // Send "qu" when shift is not held
+            SEND_STRING("qu");
+        }
+    } else if (state->count == 2) {
+        // Send "Q" when tapped twice
+        tap_code(KC_Q);
+    } else {
+        // Send "Que" when tapped three times
+        // Check if shift is held
+        if (get_mods() & MOD_MASK_SHIFT) {
+            // Send "Que" when shift is held
+            SEND_STRING("Que");
+        } else {
+            // Send "que" when shift is not held
+            SEND_STRING("que");
+        }
+    }
+}
+
+// Tap dance action
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_Q] = ACTION_TAP_DANCE_FN(dance_q_finished),
+};

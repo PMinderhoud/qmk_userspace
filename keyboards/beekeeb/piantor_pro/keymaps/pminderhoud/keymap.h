@@ -86,6 +86,12 @@ enum unicode_names {
   U_U_GRAVE_U,
 };
 
+// Define the tap dance states
+enum {
+    TD_Q = 0,
+};
+
+
 // Home row mods for Base (Recurva) layer.
 #define HOME_S LGUI_T(KC_S)
 #define HOME_N LALT_T(KC_N)
@@ -176,6 +182,7 @@ enum unicode_names {
 #define L_TB_DIA LT(DIACRIT,KC_TAB)
 #define L_ES_VST LT(VSTUDIO,KC_ESC)
 #define L_BS_VST LT(VSTUDIO,KC_BACKSPACE)
+#define L_EN_VST LT(VSTUDIO,KC_ENT)
 
 #define SK_NWDSK G(C(KC_D))     // New desktop
 #define SK_CLDSK G(C(KC_F4))     // Close desktop
