@@ -79,49 +79,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
 
   ),
-      [BASE_NOMOD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_S,    KC_N,    KC_T,    KC_C, _______,                      _______,    KC_H,    KC_E,    KC_A,    KC_I, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, KC_RSFT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, _______, _______,    L_EN_FNC, _______, KC_LALT
-                                      //`--------------------------'  `--------------------------'
-
-  ),
-    [SEMIMAK] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_L,    KC_H,    KC_V,    KC_X,                      KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y, TM_MUTE,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_GRAVE,  HOME_S, SHOME_R, SHOME_N, SHOME_T,    KC_K,                         KC_C, SHOME_D,  HOME_E,  HOME_A,  HOME_I, KC_SCLN,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  OSM(MOD_LSFT),    KC_Z,    KC_J,    KC_B,    KC_M,TD(TD_Q),                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
-                                      //`--------------------------'  `--------------------------'
-
-  ),
-      [SEMIMAK_NOMOD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_S,    KC_R,    KC_N,    KC_T, _______,                      _______,    KC_D,    KC_E,    KC_A,    KC_I, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, KC_RSFT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, _______, _______,    L_EN_FNC, _______, KC_LALT
-                                      //`--------------------------'  `--------------------------'
-
-  ),
       [NIGHT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
     KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_K,TD(TD_Q),                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_M,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                      KC_QUOT,    KC_W, KC_SCLN,KC_SLASH,KC_COMMA, KC_BSLS,
+OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                      KC_QUOT,    KC_W, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                     OSM(MOD_LSFT),L_R_NAV,L_TB_DIA,   L_BS_VST,L_SP_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
@@ -137,30 +101,6 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
       _______, _______, _______, _______, _______, _______,                      U_UAIGU, U_OAIGU, U_EAIGU, U_AAIGU, U_IAIGU, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______
-                                      //`--------------------------'  `--------------------------'
-
-  ),
-
-    [QWERTY] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, QHOME_A, QHOME_S, QHOME_D, QHOME_F,    KC_G,                         KC_H, QHOME_J, QHOME_K, QHOME_L,QHOME_SC, KC_QUOT,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_BSLS,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_ESCAPE,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
-                                      //`--------------------------'  `--------------------------'
-  ),
-    [QWERTY_NOMOD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F, _______,                      _______,    KC_J,    KC_K,    KC_L, KC_SCLN, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, KC_RSFT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, _______, _______,    L_EN_FNC, _______, KC_LALT
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -205,7 +145,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                         ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,DF(QWERTY_NOMOD), XXXXXXX, DF(SEMIMAK_NOMOD), DF(BASE_NOMOD), XXXXXXX, XXXXXXX, DF(BASE),DF(SEMIMAK), DF(NIGHT), DF(QWERTY), XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(BASE),DF(NIGHT), XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
@@ -271,7 +211,6 @@ const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
 const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
 const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
 const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
-const uint16_t PROGMEM capswdsm_combo[] = {SHOME_T,SHOME_D, COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -294,7 +233,6 @@ combo_t key_combos[] = {
   [LAMBDA] = COMBO(lambda_combo,PK_LAMBDA),
   [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
   [CAPSWORDC] = COMBO(capswd_combo,CAPSWORD),
-  [CAPSWORDCS] = COMBO(capswdsm_combo,CAPSWORD),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -411,27 +349,46 @@ bool achordion_chord(uint16_t tap_hold_keycode,
 
 // Tap dance function
 void dance_q_finished(tap_dance_state_t *state, void *user_data) {
+    uint8_t mods      = get_mods();
+    uint8_t weak_mods = get_weak_mods();
+    uint8_t osm       = get_oneshot_mods();
+    bool shift_active = ((mods | weak_mods | osm) & MOD_MASK_SHIFT) != 0;
+
     if (state->count == 1) {
-        // Check if shift is held
-        if (get_mods() & MOD_MASK_SHIFT) {
-            // Send "Qu" when shift is held
-            SEND_STRING("Qu");
+        if (shift_active) {
+            del_mods(MOD_MASK_SHIFT);
+            del_weak_mods(MOD_MASK_SHIFT);
+            clear_oneshot_mods();
+            send_keyboard_report();
+            tap_code16(S(KC_Q));
+            tap_code(KC_U);
+            set_mods(mods);
+            set_weak_mods(weak_mods);
+            set_oneshot_mods(osm);
+            send_keyboard_report();
         } else {
-            // Send "qu" when shift is not held
-            SEND_STRING("qu");
+            tap_code(KC_Q);
+            tap_code(KC_U);
         }
     } else if (state->count == 2) {
-        // Send "Q" when tapped twice
         tap_code(KC_Q);
     } else {
-        // Send "Que" when tapped three times
-        // Check if shift is held
-        if (get_mods() & MOD_MASK_SHIFT) {
-            // Send "Que" when shift is held
-            SEND_STRING("Que");
+        if (shift_active) {
+            del_mods(MOD_MASK_SHIFT);
+            del_weak_mods(MOD_MASK_SHIFT);
+            clear_oneshot_mods();
+            send_keyboard_report();
+            tap_code16(S(KC_Q));
+            tap_code(KC_U);
+            tap_code(KC_E);
+            set_mods(mods);
+            set_weak_mods(weak_mods);
+            set_oneshot_mods(osm);
+            send_keyboard_report();
         } else {
-            // Send "que" when shift is not held
-            SEND_STRING("que");
+            tap_code(KC_Q);
+            tap_code(KC_U);
+            tap_code(KC_E);
         }
     }
 }

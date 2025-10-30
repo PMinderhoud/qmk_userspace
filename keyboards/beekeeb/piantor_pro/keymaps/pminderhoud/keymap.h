@@ -4,12 +4,7 @@
 // Enums
 enum layers {
     BASE,
-    BASE_NOMOD,
-    SEMIMAK,
-    SEMIMAK_NOMOD,
     NIGHT,
-    QWERTY,
-    QWERTY_NOMOD,
     DIACRIT,
     SYM,
     NAV,
@@ -102,12 +97,6 @@ enum {
 #define HOME_A RALT_T(KC_A)
 #define HOME_I RGUI_T(KC_I)
 
-// Semimak JQ
-#define SHOME_R LALT_T(KC_R)
-#define SHOME_N LCTL_T(KC_N)
-#define SHOME_T LSFT_T(KC_T)
-#define SHOME_D RSFT_T(KC_D)
-
 // Night
 #define HOMEN_N LGUI_T(KC_N)
 #define HOMEN_S LALT_T(KC_S)
@@ -117,24 +106,17 @@ enum {
 #define HOMEN_E RALT_T(KC_E)
 #define HOMEN_A RCTL_T(KC_A)
 
-// Home row mods for QWERTY layer.
-#define QHOME_A LGUI_T(KC_A)
-#define QHOME_S LALT_T(KC_S)
-#define QHOME_D LCTL_T(KC_D)
-#define QHOME_F LSFT_T(KC_F)
-#define QHOME_J RSFT_T(KC_J)
-#define QHOME_K RCTL_T(KC_K)
-#define QHOME_L LALT_T(KC_L)
-#define QHOME_SC RGUI_T(KC_SCLN)
-
+// Diaritic layer home keys
 #define DHOME_C LSFT_T(U_CCED)
 #define DHOME_O RSFT_T(U_OTREM)
 
+// Symbol layer home keys
 #define SHOME_EX LGUI_T(KC_EXLM)
 #define SHOME_LT LALT_T(KC_LABK)
 #define SHOME_GT LCTL_T(KC_RABK)
 #define SHOME_EQ LSFT_T(KC_EQL)
 
+// navigation layer home keys
 #define NHOME_CZ LGUI_T(C(KC_Z))
 #define NHOME_CX LALT_T(C(KC_X))
 #define NHOME_CC LCTL_T(C(KC_C))
@@ -215,6 +197,5 @@ enum {
 #define VS_ISENSE  C(KC_SPACE)
 #define VS_SHOWPARAM C(S(KC_SPACE))
 #define VS_COPILOT A(KC_SLASH)
-
 
 #define TM_MUTE C(S(KC_M))
