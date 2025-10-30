@@ -8,7 +8,6 @@
 #include "quantum.h"
 #include QMK_KEYBOARD_H
 #include "features/select_word.h"
-#include "features/achordion.h"
 #include "features/caps_word.h"
 #include "features/layer_lock.h"
 
@@ -236,7 +235,6 @@ combo_t key_combos[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_achordion(keycode, record)) { return false; }
   if (!process_select_word(keycode, record, SELWORD)) { return false; }
   if (!process_layer_lock(keycode, record, LLOCK)) { return false; }
   // Your macros ...
@@ -310,30 +308,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   return true;
 }
 
-void matrix_scan_user(void) {
-  achordion_task();
-}
+// Chordal hold configuration
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT_split_3x6_3(
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+                       '*', '*', '*',  '*', '*', '*'
+    );
 
-// Disable achordion for the thumb keys
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-    switch (tap_hold_keycode) {
-        case L_SP_NAV:
-        case L_RA_DIA:
-        case L_BS_SYM:
-        case L_EN_SYM:
-        case L_TB_FNC:
-        case L_DL_FNC:
-        case L_TB_DIA:
-        case L_EN_FNC:
-        case L_ES_VST:
-        case L_BS_VST:
-        case L_R_SYM:
-            return 0;
-    }
-    return 800;
-}
-
-bool achordion_chord(uint16_t tap_hold_keycode,
+bool get_chordal_hold(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
@@ -344,7 +328,7 @@ bool achordion_chord(uint16_t tap_hold_keycode,
       break;
   }
   // Otherwise, follow the opposite hands rule.
-  return achordion_opposite_hands(tap_hold_record, other_record);
+  return get_chordal_hold_default(tap_hold_record, other_record);
 }
 
 // Tap dance function
