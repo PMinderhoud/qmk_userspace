@@ -187,7 +187,8 @@ enum combos {
   LAMBDA,
   LAMBDABLK,
   CAPSWORDC,
-  CAPSWORDCS
+  CAPSWORDCS,
+  HASH,
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -210,6 +211,7 @@ const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
 const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
 const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
 const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
+const uint16_t PROGMEM hash_combo[] = {SHOME_EQ,KC_DLR, COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -232,6 +234,7 @@ combo_t key_combos[] = {
   [LAMBDA] = COMBO(lambda_combo,PK_LAMBDA),
   [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
   [CAPSWORDC] = COMBO(capswd_combo,CAPSWORD),
+  [HASH] = COMBO(hash_combo, PK_HASH),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -239,6 +242,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   if (!process_layer_lock(keycode, record, LLOCK)) { return false; }
   // Your macros ...
   switch (keycode) {
+    case PK_HASH:
+        if (record->event.pressed) {
+            SEND_STRING("#");
+        }
+        break;
     case PK_SMHAP:
         if (record->event.pressed) {
             SEND_STRING(":-)");
