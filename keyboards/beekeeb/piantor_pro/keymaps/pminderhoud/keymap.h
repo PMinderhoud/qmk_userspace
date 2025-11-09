@@ -15,12 +15,10 @@ enum layers {
 
 enum custom_keycodes {
     PK_ISNOT = SAFE_RANGE,
-    SELWORD,
     CAMELCSE,    // thisIsASample
     PASCLCSE,    // ThisIsASample
     CAPSWORD,    // THIS is a sample
     CONSTCSE,    // THIS_IS_A_SAMPLE
-    LLOCK,
     PK_ZEROX,
     PK_DZERO,
     PK_TZERO,

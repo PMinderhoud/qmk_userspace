@@ -7,9 +7,7 @@
 #include "keymap.h"
 #include "quantum.h"
 #include QMK_KEYBOARD_H
-#include "features/select_word.h"
 #include "features/caps_word.h"
-#include "features/layer_lock.h"
 
 // Mappings
 const uint32_t unicode_map[] PROGMEM = {
@@ -93,7 +91,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
       [DIACRIT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK, _______,PK_SMSAD,PK_SMHAP,  U_EURO, _______,                      U_UGRAV, U_OGRAV, U_EGRAV, U_AGRAV, U_IGRAV, _______,
+        QK_LLCK, _______,PK_SMSAD,PK_SMHAP,  U_EURO, _______,                      U_UGRAV, U_OGRAV, U_EGRAV, U_AGRAV, U_IGRAV, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______,    U_SS,  U_NTIL,  U_CCED, KC_LSFT, _______,                      U_UTREM, U_OTREM, U_ETREM, U_ATREM, U_ITREM, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -106,7 +104,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
     [SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK, KC_PERC, KC_PLUS, KC_MINS,  KC_DLR, KC_LCBR,                      KC_RCBR,    KC_7,    KC_8,    KC_9,   KC_AT, KC_COLN,
+        QK_LLCK, KC_PERC, KC_PLUS, KC_MINS,  KC_DLR, KC_LCBR,                      KC_RCBR,    KC_7,    KC_8,    KC_9,   KC_AT, KC_COLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_EXLM, KC_LABK, KC_RABK,SHOME_EQ, KC_LPRN,                      KC_RPRN,    KC_1,    KC_2,    KC_3,    KC_0, KC_QUES,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -118,7 +116,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
     [NAV] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,---------------------------------------------------------------.
-        LLOCK,SK_PRDSK,SK_NWDSK,SK_CLDSK,SK_NXDSK, SELWORD,                    G(KC_TAB),C(KC_LEFT), S(KC_F10),    KC_F11,C(KC_RGHT),  KC_F12,        // Goto definition, combine with ctrl to go to implementations, also works as fullscreen
+        QK_LLCK,SK_PRDSK,SK_NWDSK,SK_CLDSK,SK_NXDSK, SELWORD,                    G(KC_TAB),C(KC_LEFT), S(KC_F10),    KC_F11,C(KC_RGHT),  KC_F12,        // Goto definition, combine with ctrl to go to implementations, also works as fullscreen
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
       KC_PSCR, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, C(KC_A),                      KC_PSCR,   KC_LEFT,   KC_DOWN,     KC_UP,   KC_RGHT,  KC_F8,         // nav to next error in errorlist (and other toolwindows in VS)
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
@@ -130,7 +128,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
     [FUNC] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK,CONSTCSE,CAMELCSE,PASCLCSE,CAPSWORD, KC_CAPS,                      DM_RSTP,   KC_F9,  KC_F10,  KC_F11,  KC_F12, MO(ADJUST),
+        QK_LLCK,CONSTCSE,CAMELCSE,PASCLCSE,CAPSWORD, KC_CAPS,                      DM_RSTP,   KC_F9,  KC_F10,  KC_F11,  KC_F12, MO(ADJUST),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, DM_PLY1,                      DM_REC1,   KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -154,7 +152,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
   [VSTUDIO] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-         LLOCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
+         QK_LLCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
        XXXXXXX,VS_SEARCH,VS_NXERRS,VS_STINTO,VS_STOVER, VS_STOUT,                        VS_GOALL,VS_COMMND,VS_GOIMPL,VS_SHOWPARAM,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
@@ -238,8 +236,6 @@ combo_t key_combos[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_select_word(keycode, record, SELWORD)) { return false; }
-  if (!process_layer_lock(keycode, record, LLOCK)) { return false; }
   // Your macros ...
   switch (keycode) {
     case PK_HASH:
