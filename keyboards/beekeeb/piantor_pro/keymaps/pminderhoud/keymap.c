@@ -88,6 +88,22 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
                                       //`--------------------------'  `--------------------------'
 
   ),
+// Lesswood layout - https://cyanophage.github.io/playground.html?layout=jyou%3Dqldwz%5Cciae-khtnsf%27%2C.%3B%2Fxmgpv*rb&mode=ergo&lan=english&thumb=r
+// Modified variant of Enthium V12 layout for improved performance with dutch while keeping english typing efficient.
+// Home row mods are: C=Ctrl, I=Alt, A=GUI, E=Shift, H=Ctrl, T=Alt, N=GUI, S=Shift
+
+        [LESSWOOD] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    KC_ESCAPE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_W,    KC_Z, TM_MUTE,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_F,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_BSLS, KC_QUOT,KC_COMMA,  KC_DOT, KC_SCLN, KC_SLSH,                         KC_X,    KC_M,    KC_G,    KC_P,    KC_V,KC_ENTER,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_BS_VST, L_R_SYM,L_DL_FNC
+                                      //`--------------------------'  `--------------------------'
+
+  ),
 
       [DIACRIT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
@@ -132,7 +148,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, DM_PLY1,                      DM_REC1,   KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DM_PLY2,                      DM_REC2,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
+      XXXXXXX, G(C(A(KC_2))), G(C(A(KC_3))), G(C(A(KC_4))), G(S(KC_TILD)), DM_PLY2,                      DM_REC2,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                        MO(ADJUST), _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -142,7 +158,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                         ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(BASE),DF(NIGHT), XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(BASE),DF(NIGHT), DF(LESSWOOD), XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
@@ -381,7 +397,17 @@ void dance_q_finished(tap_dance_state_t *state, void *user_data) {
     }
 }
 
+void dance_y_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        tap_code(KC_Y);
+    } else {
+        tap_code(KC_I);
+        tap_code(KC_J);
+    }
+}
+
 // Tap dance action
 tap_dance_action_t tap_dance_actions[] = {
     [TD_Q] = ACTION_TAP_DANCE_FN(dance_q_finished),
+    [TD_Y] = ACTION_TAP_DANCE_FN(dance_y_finished),
 };

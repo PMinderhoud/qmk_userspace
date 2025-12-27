@@ -5,6 +5,7 @@
 enum layers {
     BASE,
     NIGHT,
+    LESSWOOD,
     DIACRIT,
     SYM,
     NAV,
@@ -83,6 +84,7 @@ enum unicode_names {
 // Define the tap dance states
 enum {
     TD_Q = 0,
+    TD_Y,
 };
 
 
@@ -104,6 +106,16 @@ enum {
 #define HOMEN_C RSFT_T(KC_C)
 #define HOMEN_E RALT_T(KC_E)
 #define HOMEN_A RCTL_T(KC_A)
+
+// Lesswood layer home keys
+#define LWHOME_C LGUI_T(KC_C)
+#define LWHOME_I LALT_T(KC_I)
+#define LWHOME_A LCTL_T(KC_A)
+#define LWHOME_E LSFT_T(KC_E)
+#define LWHOME_H RSFT_T(KC_H)
+#define LWHOME_T RALT_T(KC_T)
+#define LWHOME_N RCTL_T(KC_N)
+#define LWHOME_S RGUI_T(KC_S)
 
 // Diaritic layer home keys
 #define DHOME_C LSFT_T(U_CCED)
