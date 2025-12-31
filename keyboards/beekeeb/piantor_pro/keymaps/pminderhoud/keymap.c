@@ -88,17 +88,17 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
                                       //`--------------------------'  `--------------------------'
 
   ),
-// Lesswood layout - https://cyanophage.github.io/playground.html?layout=jyou%3Dqldwz%5Cciae-khtnsf%27%2C.%3B%2Fxmgpv*rb&mode=ergo&lan=english&thumb=r
-// Modified variant of Enthium V12 layout for improved performance with dutch while keeping english typing efficient.
+// Lesswood layout - https://cyanophage.github.io/playground.html?layout=jyou%3Dxldpz*ciae-khtnsw%27%2C.%3B%2Fqmgfv%5Crb&mode=ergo&lan=dutch&thumb=r
+// Modified variant of Enthium V13 layout for improved performance with dutch while keeping english typing efficient.
 // Home row mods are: C=Ctrl, I=Alt, A=GUI, E=Shift, H=Ctrl, T=Alt, N=GUI, S=Shift
 
         [LESSWOOD] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_W,    KC_Z, TM_MUTE,
+    KC_ESCAPE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_F,
+         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_W,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSLS, KC_QUOT,KC_COMMA,  KC_DOT, KC_SCLN, KC_SLSH,                         KC_X,    KC_M,    KC_G,    KC_P,    KC_V,KC_ENTER,
+      KC_BSLS, KC_QUOT,KC_COMMA,  KC_DOT, KC_SCLN, KC_SLSH,                         KC_X,    KC_M,    KC_G,    KC_F,    KC_Z,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          L_ES_VST,L_SP_NAV,L_TB_DIA,   L_BS_VST, L_R_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
