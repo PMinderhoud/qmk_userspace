@@ -94,7 +94,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
         [LESSWOOD] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-    KC_ESCAPE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
+     KC_GRAVE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
          KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_W,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -190,6 +190,10 @@ enum combos {
   EXCLAMATION,
   QUESTION,
   COLON,
+    DBL_QTE_LW,
+    EXCLAMATION_LW,
+    QUESTION_LW,
+    COLON_LW,
   ISNOT,
   DOT_SYM,
   DBL_QTE_SYM,
@@ -203,6 +207,8 @@ enum combos {
   CAPSWORDC,
   CAPSWORDCS,
   HASH,
+  ENTER,
+  CAPSWORDCLW,
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -214,6 +220,10 @@ const uint16_t PROGMEM dblqte_combo[] = {KC_SCLN, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM exclamation_combo[] = {KC_SCLN, KC_L, COMBO_END};
 const uint16_t PROGMEM question_combo[] = {KC_K, KC_G, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {KC_X, KC_K, COMBO_END};
+const uint16_t PROGMEM dblqte_lw_combo[] = {KC_G, KC_F, COMBO_END};
+const uint16_t PROGMEM exclamation_lw_combo[] = {KC_G, KC_M, COMBO_END};
+const uint16_t PROGMEM question_lw_combo[] = {KC_DOT, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM colon_lw_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM notnull_combo[] = {KC_EXLM, SHOME_EQ, COMBO_END};
 const uint16_t PROGMEM dotsym_combo[] = {KC_6, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dblqtesym_combo[] = {KC_5, KC_6, COMBO_END};
@@ -225,7 +235,9 @@ const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
 const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
 const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
 const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
+const uint16_t PROGMEM capswdlw_combo[] = {LWHOME_E,LWHOME_H, COMBO_END};
 const uint16_t PROGMEM hash_combo[] = {SHOME_EQ,KC_DLR, COMBO_END};
+const uint16_t PROGMEM enterlw_combo[] = {LWHOME_H,LWHOME_T,LWHOME_N, COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -237,6 +249,10 @@ combo_t key_combos[] = {
   [EXCLAMATION] = COMBO(exclamation_combo, KC_EXCLAIM),
   [QUESTION] = COMBO(question_combo, KC_QUESTION),
   [COLON] = COMBO(colon_combo, KC_COLON),
+    [DBL_QTE_LW] = COMBO(dblqte_lw_combo, KC_DOUBLE_QUOTE),
+    [EXCLAMATION_LW] = COMBO(exclamation_lw_combo, KC_EXCLAIM),
+    [QUESTION_LW] = COMBO(question_lw_combo, KC_QUESTION),
+    [COLON_LW] = COMBO(colon_lw_combo, KC_COLON),
   [ISNOT] = COMBO(notnull_combo, PK_ISNOT),
   [DOT_SYM] = COMBO(dotsym_combo, KC_COMMA),
   [DBL_QTE_SYM] = COMBO(dblqtesym_combo, KC_DOUBLE_QUOTE),
@@ -249,6 +265,8 @@ combo_t key_combos[] = {
   [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
   [CAPSWORDC] = COMBO(capswd_combo,CAPSWORD),
   [HASH] = COMBO(hash_combo, PK_HASH),
+  [ENTER] = COMBO(enterlw_combo, KC_ENTER),
+  [CAPSWORDCLW] = COMBO(capswdlw_combo,CAPSWORD),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
