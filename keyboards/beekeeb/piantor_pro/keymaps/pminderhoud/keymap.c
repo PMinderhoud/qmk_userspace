@@ -7,10 +7,7 @@
 #include "keymap.h"
 #include "quantum.h"
 #include QMK_KEYBOARD_H
-#include "features/select_word.h"
-#include "features/achordion.h"
 #include "features/caps_word.h"
-#include "features/layer_lock.h"
 
 // Mappings
 const uint32_t unicode_map[] PROGMEM = {
@@ -79,58 +76,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       //`--------------------------'  `--------------------------'
 
   ),
-      [BASE_NOMOD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_S,    KC_N,    KC_T,    KC_C, _______,                      _______,    KC_H,    KC_E,    KC_A,    KC_I, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, KC_RSFT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, _______, _______,    L_EN_FNC, _______, KC_LALT
-                                      //`--------------------------'  `--------------------------'
-
-  ),
-    [SEMIMAK] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      XXXXXXX,    KC_F,    KC_L,    KC_H,    KC_V,    KC_X,                      KC_QUOT,    KC_W,    KC_U,    KC_O,    KC_Y, TM_MUTE,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-     KC_GRAVE,  HOME_S, SHOME_R, SHOME_N, SHOME_T,    KC_K,                         KC_C, SHOME_D,  HOME_E,  HOME_A,  HOME_I, KC_SCLN,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  OSM(MOD_LSFT),    KC_Z,    KC_J,    KC_B,    KC_M,TD(TD_Q),                         KC_P,    KC_G,KC_COMMA,  KC_DOT,KC_SLASH, KC_BSLS,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
-                                      //`--------------------------'  `--------------------------'
-
-  ),
-      [SEMIMAK_NOMOD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_S,    KC_R,    KC_N,    KC_T, _______,                      _______,    KC_D,    KC_E,    KC_A,    KC_I, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, KC_RSFT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, _______, _______,    L_EN_FNC, _______, KC_LALT
-                                      //`--------------------------'  `--------------------------'
-
-  ),
       [NIGHT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
     KC_ESCAPE,    KC_B,    KC_F,    KC_L,    KC_K,TD(TD_Q),                         KC_P,    KC_G,    KC_O,    KC_U,  KC_DOT, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
      KC_GRAVE, HOMEN_N, HOMEN_S, HOMEN_H, HOMEN_T,    KC_M,                         KC_Y, HOMEN_C, HOMEN_A, HOMEN_E,  HOME_I,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                      KC_QUOT,    KC_W, KC_SCLN,KC_SLASH,KC_COMMA, KC_BSLS,
+OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                      KC_QUOT,    KC_W, KC_SCLN, KC_QUOT,KC_COMMA, KC_BSLS,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                     OSM(MOD_LSFT),L_R_NAV,L_TB_DIA,   L_BS_VST,L_SP_SYM,L_DL_FNC
+                                      //`--------------------------'  `--------------------------'
+
+  ),
+// Lesswood layout - https://cyanophage.github.io/playground.html?layout=jyou%3Dxldpz*ciae-khtnsw%27%2C.%3B%2Fqmgfv%5Crb&mode=ergo&lan=dutch&thumb=r
+// Modified variant of Enthium V13 layout for improved performance with dutch while keeping english typing efficient.
+// Home row mods are: C=Ctrl, I=Alt, A=GUI, E=Shift, H=Ctrl, T=Alt, N=GUI, S=Shift
+
+        [LESSWOOD] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+     KC_GRAVE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_W,
+  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+      KC_BSLS, KC_QUOT,KC_COMMA,  KC_DOT, KC_SCLN, KC_SLSH,                         KC_X,    KC_M,    KC_G,    KC_F,    KC_Z,KC_ENTER,
+  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_BS_VST, L_R_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
 
       [DIACRIT] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK, _______,PK_SMSAD,PK_SMHAP,  U_EURO, _______,                      U_UGRAV, U_OGRAV, U_EGRAV, U_AGRAV, U_IGRAV, _______,
+        QK_LLCK, _______,PK_SMSAD,PK_SMHAP,  U_EURO, _______,                      U_UGRAV, U_OGRAV, U_EGRAV, U_AGRAV, U_IGRAV, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______,    U_SS,  U_NTIL,  U_CCED, KC_LSFT, _______,                      U_UTREM, U_OTREM, U_ETREM, U_ATREM, U_ITREM, _______,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -141,33 +118,9 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
   ),
 
-    [QWERTY] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL, QHOME_A, QHOME_S, QHOME_D, QHOME_F,    KC_G,                         KC_H, QHOME_J, QHOME_K, QHOME_L,QHOME_SC, KC_QUOT,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_BSLS,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                        KC_ESCAPE,L_SP_NAV,L_TB_DIA,   L_EN_SYM,L_BS_SYM,L_DL_FNC
-                                      //`--------------------------'  `--------------------------'
-  ),
-    [QWERTY_NOMOD] = LAYOUT_split_3x6_3(
-  //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      QK_GESC, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______,  KC_DEL,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F, _______,                      _______,    KC_J,    KC_K,    KC_L, KC_SCLN, _______,
-  //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LSFT, _______, _______, _______, _______, _______,                      _______, _______, _______, _______, _______, KC_RSFT,
-  //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_LCTL, _______, _______,    L_EN_FNC, _______, KC_LALT
-                                      //`--------------------------'  `--------------------------'
-
-  ),
-
     [SYM] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK, KC_PERC, KC_PLUS, KC_MINS,  KC_DLR, KC_LCBR,                      KC_RCBR,    KC_7,    KC_8,    KC_9,   KC_AT, KC_COLN,
+        QK_LLCK, KC_PERC, KC_PLUS, KC_MINS,  KC_DLR, KC_LCBR,                      KC_RCBR,    KC_7,    KC_8,    KC_9,   KC_AT, KC_COLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       _______, KC_EXLM, KC_LABK, KC_RABK,SHOME_EQ, KC_LPRN,                      KC_RPRN,    KC_1,    KC_2,    KC_3,    KC_0, KC_QUES,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
@@ -179,7 +132,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
     [NAV] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,---------------------------------------------------------------.
-        LLOCK,SK_PRDSK,SK_NWDSK,SK_CLDSK,SK_NXDSK, SELWORD,                    G(KC_TAB),C(KC_LEFT), S(KC_F10),    KC_F11,C(KC_RGHT),  KC_F12,        // Goto definition, combine with ctrl to go to implementations, also works as fullscreen
+        QK_LLCK,SK_PRDSK,SK_NWDSK,SK_CLDSK,SK_NXDSK, SELWORD,                    G(KC_TAB),C(KC_LEFT), S(KC_F10),    KC_F11,C(KC_RGHT),  KC_F12,        // Goto definition, combine with ctrl to go to implementations, also works as fullscreen
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
       KC_PSCR, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, C(KC_A),                      KC_PSCR,   KC_LEFT,   KC_DOWN,     KC_UP,   KC_RGHT,  KC_F8,         // nav to next error in errorlist (and other toolwindows in VS)
   //|--------+--------+--------+--------+--------+--------|                    |--------+----------+----------+----------+----------+----------|
@@ -191,11 +144,11 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
     [FUNC] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        LLOCK,CONSTCSE,CAMELCSE,PASCLCSE,CAPSWORD, KC_CAPS,                      DM_RSTP,   KC_F9,  KC_F10,  KC_F11,  KC_F12, MO(ADJUST),
+        QK_LLCK,CONSTCSE,CAMELCSE,PASCLCSE,CAPSWORD, KC_CAPS,                      DM_RSTP,   KC_F9,  KC_F10,  KC_F11,  KC_F12, MO(ADJUST),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, DM_PLY1,                      DM_REC1,   KC_F5,   KC_F6,   KC_F7,   KC_F8, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DM_PLY2,                      DM_REC2,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
+      XXXXXXX, G(C(A(KC_2))), G(C(A(KC_3))), G(C(A(KC_4))), G(S(KC_TILD)), DM_PLY2,                      DM_REC2,   KC_F1,   KC_F2,   KC_F3,   KC_F4, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                        MO(ADJUST), _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -205,7 +158,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                         ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,DF(QWERTY_NOMOD), XXXXXXX, DF(SEMIMAK_NOMOD), DF(BASE_NOMOD), XXXXXXX, XXXXXXX, DF(BASE),DF(SEMIMAK), DF(NIGHT), DF(QWERTY), XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(BASE),DF(NIGHT), DF(LESSWOOD), XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
@@ -215,7 +168,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
   [VSTUDIO] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------------.                      ,-----------------------------------------------------------.
-         LLOCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
+         QK_LLCK,VS_FORMAT,VS_PRERRS, VS_BRKPT, VS_DEBUG,VS_STPDBG,                         XXXXXXX,VS_GOFILE, VS_GODEF, VS_PKDEF,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
        XXXXXXX,VS_SEARCH,VS_NXERRS,VS_STINTO,VS_STOVER, VS_STOUT,                        VS_GOALL,VS_COMMND,VS_GOIMPL,VS_SHOWPARAM,  XXXXXXX,  XXXXXXX,
   //|---------+---------+---------+---------+---------+---------|                      |---------+---------+---------+---------+---------+---------|
@@ -237,6 +190,10 @@ enum combos {
   EXCLAMATION,
   QUESTION,
   COLON,
+    DBL_QTE_LW,
+    EXCLAMATION_LW,
+    QUESTION_LW,
+    COLON_LW,
   ISNOT,
   DOT_SYM,
   DBL_QTE_SYM,
@@ -248,7 +205,10 @@ enum combos {
   LAMBDA,
   LAMBDABLK,
   CAPSWORDC,
-  CAPSWORDCS
+  CAPSWORDCS,
+  HASH,
+  ENTER,
+  CAPSWORDCLW,
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -260,6 +220,10 @@ const uint16_t PROGMEM dblqte_combo[] = {KC_SCLN, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM exclamation_combo[] = {KC_SCLN, KC_L, COMBO_END};
 const uint16_t PROGMEM question_combo[] = {KC_K, KC_G, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {KC_X, KC_K, COMBO_END};
+const uint16_t PROGMEM dblqte_lw_combo[] = {KC_G, KC_F, COMBO_END};
+const uint16_t PROGMEM exclamation_lw_combo[] = {KC_G, KC_M, COMBO_END};
+const uint16_t PROGMEM question_lw_combo[] = {KC_DOT, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM colon_lw_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
 const uint16_t PROGMEM notnull_combo[] = {KC_EXLM, SHOME_EQ, COMBO_END};
 const uint16_t PROGMEM dotsym_combo[] = {KC_6, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dblqtesym_combo[] = {KC_5, KC_6, COMBO_END};
@@ -271,7 +235,9 @@ const uint16_t PROGMEM backslash_combo[] = {KC_QUOT,KC_COMMA, COMBO_END};
 const uint16_t PROGMEM lambda_combo[] = {SHOME_EQ,KC_RABK, COMBO_END};             // = >
 const uint16_t PROGMEM lambdablk_combo[] = {SHOME_EQ,KC_RABK,KC_LABK, COMBO_END};  // = > <
 const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
-const uint16_t PROGMEM capswdsm_combo[] = {SHOME_T,SHOME_D, COMBO_END};
+const uint16_t PROGMEM capswdlw_combo[] = {LWHOME_E,LWHOME_H, COMBO_END};
+const uint16_t PROGMEM hash_combo[] = {SHOME_EQ,KC_DLR, COMBO_END};
+const uint16_t PROGMEM enterlw_combo[] = {LWHOME_H,LWHOME_T,LWHOME_N, COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -283,6 +249,10 @@ combo_t key_combos[] = {
   [EXCLAMATION] = COMBO(exclamation_combo, KC_EXCLAIM),
   [QUESTION] = COMBO(question_combo, KC_QUESTION),
   [COLON] = COMBO(colon_combo, KC_COLON),
+    [DBL_QTE_LW] = COMBO(dblqte_lw_combo, KC_DOUBLE_QUOTE),
+    [EXCLAMATION_LW] = COMBO(exclamation_lw_combo, KC_EXCLAIM),
+    [QUESTION_LW] = COMBO(question_lw_combo, KC_QUESTION),
+    [COLON_LW] = COMBO(colon_lw_combo, KC_COLON),
   [ISNOT] = COMBO(notnull_combo, PK_ISNOT),
   [DOT_SYM] = COMBO(dotsym_combo, KC_COMMA),
   [DBL_QTE_SYM] = COMBO(dblqtesym_combo, KC_DOUBLE_QUOTE),
@@ -294,15 +264,19 @@ combo_t key_combos[] = {
   [LAMBDA] = COMBO(lambda_combo,PK_LAMBDA),
   [LAMBDABLK] = COMBO(lambdablk_combo,PK_LAMBDABLK),
   [CAPSWORDC] = COMBO(capswd_combo,CAPSWORD),
-  [CAPSWORDCS] = COMBO(capswdsm_combo,CAPSWORD),
+  [HASH] = COMBO(hash_combo, PK_HASH),
+  [ENTER] = COMBO(enterlw_combo, KC_ENTER),
+  [CAPSWORDCLW] = COMBO(capswdlw_combo,CAPSWORD),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
-  if (!process_achordion(keycode, record)) { return false; }
-  if (!process_select_word(keycode, record, SELWORD)) { return false; }
-  if (!process_layer_lock(keycode, record, LLOCK)) { return false; }
   // Your macros ...
   switch (keycode) {
+    case PK_HASH:
+        if (record->event.pressed) {
+            SEND_STRING("#");
+        }
+        break;
     case PK_SMHAP:
         if (record->event.pressed) {
             SEND_STRING(":-)");
@@ -372,30 +346,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
   return true;
 }
 
-void matrix_scan_user(void) {
-  achordion_task();
-}
+// Chordal hold configuration
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT_split_3x6_3(
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',  'R', 'R', 'R', 'R', 'R', 'R',
+                       '*', '*', '*',  '*', '*', '*'
+    );
 
-// Disable achordion for the thumb keys
-uint16_t achordion_timeout(uint16_t tap_hold_keycode) {
-    switch (tap_hold_keycode) {
-        case L_SP_NAV:
-        case L_RA_DIA:
-        case L_BS_SYM:
-        case L_EN_SYM:
-        case L_TB_FNC:
-        case L_DL_FNC:
-        case L_TB_DIA:
-        case L_EN_FNC:
-        case L_ES_VST:
-        case L_BS_VST:
-        case L_R_SYM:
-            return 0;
-    }
-    return 800;
-}
-
-bool achordion_chord(uint16_t tap_hold_keycode,
+bool get_chordal_hold(uint16_t tap_hold_keycode,
                      keyrecord_t* tap_hold_record,
                      uint16_t other_keycode,
                      keyrecord_t* other_record) {
@@ -406,37 +366,66 @@ bool achordion_chord(uint16_t tap_hold_keycode,
       break;
   }
   // Otherwise, follow the opposite hands rule.
-  return achordion_opposite_hands(tap_hold_record, other_record);
+  return get_chordal_hold_default(tap_hold_record, other_record);
 }
 
 // Tap dance function
 void dance_q_finished(tap_dance_state_t *state, void *user_data) {
+    uint8_t mods      = get_mods();
+    uint8_t weak_mods = get_weak_mods();
+    uint8_t osm       = get_oneshot_mods();
+    bool shift_active = ((mods | weak_mods | osm) & MOD_MASK_SHIFT) != 0;
+
     if (state->count == 1) {
-        // Check if shift is held
-        if (get_mods() & MOD_MASK_SHIFT) {
-            // Send "Qu" when shift is held
-            SEND_STRING("Qu");
+        if (shift_active) {
+            del_mods(MOD_MASK_SHIFT);
+            del_weak_mods(MOD_MASK_SHIFT);
+            clear_oneshot_mods();
+            send_keyboard_report();
+            tap_code16(S(KC_Q));
+            tap_code(KC_U);
+            set_mods(mods);
+            set_weak_mods(weak_mods);
+            set_oneshot_mods(osm);
+            send_keyboard_report();
         } else {
-            // Send "qu" when shift is not held
-            SEND_STRING("qu");
+            tap_code(KC_Q);
+            tap_code(KC_U);
         }
     } else if (state->count == 2) {
-        // Send "Q" when tapped twice
         tap_code(KC_Q);
     } else {
-        // Send "Que" when tapped three times
-        // Check if shift is held
-        if (get_mods() & MOD_MASK_SHIFT) {
-            // Send "Que" when shift is held
-            SEND_STRING("Que");
+        if (shift_active) {
+            del_mods(MOD_MASK_SHIFT);
+            del_weak_mods(MOD_MASK_SHIFT);
+            clear_oneshot_mods();
+            send_keyboard_report();
+            tap_code16(S(KC_Q));
+            tap_code(KC_U);
+            tap_code(KC_E);
+            set_mods(mods);
+            set_weak_mods(weak_mods);
+            set_oneshot_mods(osm);
+            send_keyboard_report();
         } else {
-            // Send "que" when shift is not held
-            SEND_STRING("que");
+            tap_code(KC_Q);
+            tap_code(KC_U);
+            tap_code(KC_E);
         }
+    }
+}
+
+void dance_y_finished(tap_dance_state_t *state, void *user_data) {
+    if (state->count == 1) {
+        tap_code(KC_Y);
+    } else {
+        tap_code(KC_I);
+        tap_code(KC_J);
     }
 }
 
 // Tap dance action
 tap_dance_action_t tap_dance_actions[] = {
     [TD_Q] = ACTION_TAP_DANCE_FN(dance_q_finished),
+    [TD_Y] = ACTION_TAP_DANCE_FN(dance_y_finished),
 };
