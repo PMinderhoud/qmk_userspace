@@ -11,7 +11,8 @@ enum layers {
     NAV,
     FUNC,
     ADJUST,
-    VSTUDIO
+    VSTUDIO,
+    MOUSE
 };
 
 enum custom_keycodes {
@@ -173,7 +174,7 @@ enum {
 #define L_TB_FNC LT(FUNC,KC_TAB)
 #define L_DL_FNC LT(FUNC,KC_DEL)
 #define L_TB_DIA LT(DIACRIT,KC_TAB)
-#define L_ES_VST LT(VSTUDIO,KC_ESC)
+#define L_ES_VST LT(MOUSE,KC_ESC)
 #define L_BS_VST LT(VSTUDIO,KC_BACKSPACE)
 #define L_EN_VST LT(VSTUDIO,KC_ENT)
 

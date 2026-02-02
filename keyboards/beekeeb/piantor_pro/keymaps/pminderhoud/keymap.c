@@ -158,7 +158,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                         ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, DF(BASE),DF(NIGHT), DF(LESSWOOD), XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, DF(BASE),DF(NIGHT), DF(LESSWOOD), XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
@@ -176,6 +176,18 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //|---------+---------+---------+---------+---------+---------+---------|  |---------+---------+---------+---------+---------+---------+---------|
                                                VS_QACT,VS_ISENSE,VS_COPILOT,     VS_QACT,VS_ISENSE,VS_COPILOT
                                           //`-----------------------------'  `-----------------------------'
+  ),
+
+    [MOUSE] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                         ,-----------------------------------------------------.
+      QK_LLCK, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            OM_W_U, OM_BTNS, OM_U   , OM_DBLS, OM_FAST, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX,                           OM_W_D , OM_L   , OM_D   , OM_R   , OM_SLOW, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, XXXXXXX,
+  //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
+                                          XXXXXXX, XXXXXXX, XXXXXXX,                  XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'                `--------------------------'
   ),
 };
 // clang-format on
