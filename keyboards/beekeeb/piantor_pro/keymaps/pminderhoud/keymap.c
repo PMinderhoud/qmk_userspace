@@ -94,13 +94,13 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
         [LESSWOOD] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     KC_GRAVE,    KC_J,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
+     KC_GRAVE,    KC_W,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_W,
+         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_X,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSLS, KC_QUOT,KC_COMMA,  KC_DOT, KC_SCLN, KC_SLSH,                         KC_X,    KC_M,    KC_G,    KC_F,    KC_Z,KC_ENTER,
+      KC_BSLS, KC_QUOT,KC_COMMA,    KC_J, KC_DOT, KC_SLSH,                       KC_SCLN,    KC_M,    KC_G,    KC_F,    KC_Z,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                         L_ES_VST,L_SP_NAV,L_TB_DIA,   L_BS_VST, L_R_SYM,L_DL_FNC
+                                         L_EN_VST,L_SP_NAV,L_TB_DIA,   L_BS_VST, L_R_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
 
   ),
@@ -122,7 +122,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
         QK_LLCK, KC_PERC, KC_PLUS, KC_MINS,  KC_DLR, KC_LCBR,                      KC_RCBR,    KC_7,    KC_8,    KC_9,   KC_AT, KC_COLN,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      _______, KC_EXLM, KC_LABK, KC_RABK,SHOME_EQ, KC_LPRN,                      KC_RPRN,    KC_1,    KC_2,    KC_3,    KC_0, KC_QUES,
+      KC_GRAVE, KC_EXLM, KC_LABK, KC_RABK,SHOME_EQ, KC_LPRN,                      KC_RPRN,    KC_1,    KC_2,    KC_3,    KC_0, KC_QUES,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_TILD, KC_CIRC, KC_ASTR, KC_SLSH, KC_UNDS, KC_LBRC,                      KC_RBRC,    KC_4,    KC_5,    KC_6,  KC_DOT, _______,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
