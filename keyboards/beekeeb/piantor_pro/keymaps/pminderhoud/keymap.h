@@ -12,7 +12,8 @@ enum layers {
     FUNC,
     ADJUST,
     VSTUDIO,
-    MOUSE
+    MOUSE,
+    GAME
 };
 
 enum custom_keycodes {

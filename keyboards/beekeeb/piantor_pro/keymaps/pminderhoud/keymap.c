@@ -158,7 +158,7 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
   //,-----------------------------------------------------.                         ,-----------------------------------------------------.
       QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, DF(BASE),DF(NIGHT), DF(LESSWOOD), XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     XXXXXXX, DF(BASE),DF(NIGHT), DF(LESSWOOD), DF(GAME), XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
@@ -187,6 +187,21 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                           OM_RELS, OM_HLDS, OM_SEL1, OM_SEL2, OM_SEL3, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
                                           XXXXXXX, XXXXXXX, XXXXXXX,                  XXXXXXX, XXXXXXX, XXXXXXX
+                                      //`--------------------------'                `--------------------------'
+  ),
+
+// Game layer: alpha rows shifted 1 column right for column-stagger ergonomics.
+// Physical ESDF positions output standard WASD. Numbers row stays unshifted.
+// Left thumb: Ctrl, Space, G (grenade/utility). Right side: passthrough for mouse use.
+    [GAME] = LAYOUT_split_3x6_3(
+  //,-----------------------------------------------------.                         ,-----------------------------------------------------.
+      KC_ESC,     KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                           KC_6,    KC_7,    KC_8,    KC_9,    KC_0, DF(BASE),
+  //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
+      KC_GRV,   KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,                           KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
+  //|--------+--------+--------+--------+--------+--------|                         |--------+--------+--------+--------+--------+--------|
+      KC_LCTL, KC_LSFT,    KC_A,    KC_S,    KC_D,    KC_F,                           KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_ENT,
+  //|--------+--------+--------+--------+--------+--------+--------|                |--------+--------+--------+--------+--------+--------+--------|
+                                          KC_LALT, KC_SPC,     KC_G,                  KC_T,    KC_B, KC_RSFT
                                       //`--------------------------'                `--------------------------'
   ),
 };
