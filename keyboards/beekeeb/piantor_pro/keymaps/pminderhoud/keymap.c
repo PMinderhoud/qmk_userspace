@@ -236,6 +236,9 @@ enum combos {
   HASH,
   ENTER,
   CAPSWORDCLW,
+  JO,
+  JOU,
+  WIJ,
 };
 
 const uint16_t PROGMEM acirc_combo[] = {U_ATREM, U_AAIGU, COMBO_END};
@@ -249,8 +252,8 @@ const uint16_t PROGMEM question_combo[] = {KC_K, KC_G, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {KC_X, KC_K, COMBO_END};
 const uint16_t PROGMEM dblqte_lw_combo[] = {KC_G, KC_F, COMBO_END};
 const uint16_t PROGMEM exclamation_lw_combo[] = {KC_G, KC_M, COMBO_END};
-const uint16_t PROGMEM question_lw_combo[] = {KC_DOT, KC_SCLN, COMBO_END};
-const uint16_t PROGMEM colon_lw_combo[] = {KC_COMMA, KC_DOT, COMBO_END};
+const uint16_t PROGMEM question_lw_combo[] = {KC_J,     KC_DOT,  COMBO_END};
+const uint16_t PROGMEM colon_lw_combo[]   = {KC_COMMA, KC_J,    COMBO_END};
 const uint16_t PROGMEM notnull_combo[] = {KC_EXLM, SHOME_EQ, COMBO_END};
 const uint16_t PROGMEM dotsym_combo[] = {KC_6, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dblqtesym_combo[] = {KC_5, KC_6, COMBO_END};
@@ -265,6 +268,9 @@ const uint16_t PROGMEM capswd_combo[] = {HOME_C,HOME_H, COMBO_END};
 const uint16_t PROGMEM capswdlw_combo[] = {LWHOME_E,LWHOME_H, COMBO_END};
 const uint16_t PROGMEM hash_combo[] = {SHOME_EQ,KC_DLR, COMBO_END};
 const uint16_t PROGMEM enterlw_combo[] = {LWHOME_H,LWHOME_T,LWHOME_N, COMBO_END};
+const uint16_t PROGMEM jo_lw_combo[]    = {TD(TD_Y), KC_O,            COMBO_END};
+const uint16_t PROGMEM jou_lw_combo[]   = {TD(TD_Y), KC_O,    KC_U,    COMBO_END};
+const uint16_t PROGMEM wij_lw_combo[]   = {KC_W,    TD(TD_Y),            COMBO_END};
 
 combo_t key_combos[] = {
   [ACIRC] = COMBO(acirc_combo, U_ACIRC),
@@ -294,6 +300,9 @@ combo_t key_combos[] = {
   [HASH] = COMBO(hash_combo, PK_HASH),
   [ENTER] = COMBO(enterlw_combo, KC_ENTER),
   [CAPSWORDCLW] = COMBO(capswdlw_combo,CAPSWORD),
+  [JO]           = COMBO(jo_lw_combo,  PK_JO),
+  [JOU]          = COMBO(jou_lw_combo, PK_JOU),
+  [WIJ]          = COMBO(wij_lw_combo, PK_WIJ),
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
@@ -302,6 +311,45 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     case PK_HASH:
         if (record->event.pressed) {
             SEND_STRING("#");
+        }
+        break;
+    case PK_JO:
+        if (record->event.pressed) {
+            uint8_t mods = get_mods() | get_oneshot_mods();
+            if (mods & MOD_MASK_SHIFT) {
+                clear_mods();
+                clear_oneshot_mods();
+                SEND_STRING("Jo");
+                set_mods(mods);
+            } else {
+                SEND_STRING("jo");
+            }
+        }
+        break;
+    case PK_JOU:
+        if (record->event.pressed) {
+            uint8_t mods = get_mods() | get_oneshot_mods();
+            if (mods & MOD_MASK_SHIFT) {
+                clear_mods();
+                clear_oneshot_mods();
+                SEND_STRING("Jou");
+                set_mods(mods);
+            } else {
+                SEND_STRING("jou");
+            }
+        }
+        break;
+    case PK_WIJ:
+        if (record->event.pressed) {
+            uint8_t mods = get_mods() | get_oneshot_mods();
+            if (mods & MOD_MASK_SHIFT) {
+                clear_mods();
+                clear_oneshot_mods();
+                SEND_STRING("Wij");
+                set_mods(mods);
+            } else {
+                SEND_STRING("wij");
+            }
         }
         break;
     case PK_SMHAP:

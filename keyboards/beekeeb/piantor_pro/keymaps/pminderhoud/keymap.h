@@ -29,7 +29,10 @@ enum custom_keycodes {
     PK_SMSAD,
     PK_LAMBDA,
     PK_LAMBDABLK,
-    PK_HASH
+    PK_HASH,
+    PK_JO,
+    PK_JOU,
+    PK_WIJ
 };
 
 enum unicode_names {
