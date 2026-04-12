@@ -94,11 +94,11 @@ OSM(MOD_LSFT),    KC_X,    KC_V,    KC_J,    KC_D,    KC_Z,                     
 
         [LESSWOOD] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-     KC_GRAVE,    KC_W,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                     TD(TD_Q),    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
+     KC_GRAVE,    KC_W,TD(TD_Y),    KC_O,    KC_U,KC_EQUAL,                          KC_Z,    KC_L,    KC_D,    KC_P,    KC_V, TM_MUTE,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-         KC_B,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_X,
+      KC_SLSH,LWHOME_C,LWHOME_I,LWHOME_A,LWHOME_E, KC_MINS,                         KC_K,LWHOME_H,LWHOME_T,LWHOME_N,LWHOME_S,    KC_X,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSLS, KC_QUOT,KC_COMMA,    KC_J, KC_DOT, KC_SLSH,                       KC_SCLN,    KC_M,    KC_G,    KC_F,    KC_Z,KC_ENTER,
+      KC_BSLS, KC_QUOT,KC_COMMA,    KC_J, KC_DOT, KC_SCLN,                       TD(TD_Q),    KC_M,    KC_G,    KC_B,    KC_F,KC_ENTER,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                          L_EN_VST,L_SP_NAV,L_TB_DIA,   L_BS_VST, L_R_SYM,L_DL_FNC
                                       //`--------------------------'  `--------------------------'
@@ -250,7 +250,7 @@ const uint16_t PROGMEM dblqte_combo[] = {KC_SCLN, KC_QUOT, COMBO_END};
 const uint16_t PROGMEM exclamation_combo[] = {KC_SCLN, KC_L, COMBO_END};
 const uint16_t PROGMEM question_combo[] = {KC_K, KC_G, COMBO_END};
 const uint16_t PROGMEM colon_combo[] = {KC_X, KC_K, COMBO_END};
-const uint16_t PROGMEM dblqte_lw_combo[] = {KC_G, KC_F, COMBO_END};
+const uint16_t PROGMEM dblqte_lw_combo[] = {KC_G, KC_B, COMBO_END};
 const uint16_t PROGMEM exclamation_lw_combo[] = {KC_G, KC_M, COMBO_END};
 const uint16_t PROGMEM question_lw_combo[] = {KC_J,     KC_DOT,  COMBO_END};
 const uint16_t PROGMEM colon_lw_combo[]   = {KC_COMMA, KC_J,    COMBO_END};

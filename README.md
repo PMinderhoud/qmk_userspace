@@ -117,9 +117,9 @@ Home row mod notation: key^modifier (G=GUI, A=Alt, C=Ctrl, S=Shift)
 
 **LESSWOOD** *(primary Dutch/English layer)*
 ```
-  `    W    Y/IJ   O     U     =   |  QU    L     D     P     V    MUTE
-  B   C^G   I^A   A^C   E^S    -   |   K   H^S   T^A   N^C   S^G   X
-  \    '     ,     J     .     /   |   ;    M     G     F     Z    ENT
+  `    W    Y/IJ   O     U     =   |   Z    L     D     P     V    MUTE
+  /   C^G   I^A   A^C   E^S    -   |   K   H^S   T^A   N^C   S^G   X
+  \    '     ,     J     .     ;   |  QU    M     G     B     F    ENT
               ENT/VS  SPC/Nav TAB/Dia | BS/VS   R/Sym  DEL/Fn
 ```
 
